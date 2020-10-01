@@ -1,10 +1,9 @@
-# React Lab
+# Thinking In React Function Example
 
-npx create-react-app p5lab
+See: !(YouTube Video)[https://youtu.be/WT3cPlShsPM]
 
-cd p5lab
+It's 99% the same.
 
-have fun.
+React Documentation here: https://reactjs.org
 
-Documentation here: https://reactjs.org
 
