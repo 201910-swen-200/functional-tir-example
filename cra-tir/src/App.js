@@ -14,13 +14,22 @@ function ProductCategoryRow(props) {
 }
 
 function SearchBar(props) {
+
+  const filterTextChanged = (e) => {
+    props.setFilterText(e.target.value);
+  }
+
+  const onlyInStockChanged = (e) => {
+    props.setOnlyInStock(e.target.checked);
+  }  
+  
   return (
     <form>
       <input type="text" placeholder="Search..." value={props.filterText}
-             onChange = {props.filterTextChanged} />
+             onChange = {filterTextChanged} />
     <p>
       <input type="checkbox" checked = {props.onlyInStock}
-             onChange = {props.onlyInStockChanged} /> Only show products in stock</p>
+             onChange = {onlyInStockChanged} /> Only show products in stock</p>
     </form>
   )
 }
@@ -42,19 +51,11 @@ function FilterableProductTable(props) {
   const [onlyInStock, setOnlyInStock] = useState(false);
   const [filterText, setFilterText] = useState('');
 
-  const filterTextChanged = (e) => {
-    setFilterText(e.target.value);
-  }
-
-  const onlyInStockChanged = (e) => {
-    setOnlyInStock(e.target.checked);
-  }
-
   return (
     <div>
       <SearchBar filterText = {filterText} onlyInStock = {onlyInStock} 
-        filterTextChanged = {filterTextChanged}
-        onlyInStockChanged = {onlyInStockChanged}/>
+        setFilterText = {setFilterText}
+        setOnlyInStock = {setOnlyInStock}/>
       <ProductTable products = {props.products} filterText = {filterText} onlyInStock = {onlyInStock} />
     </div>
   )
