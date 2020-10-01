@@ -1,6 +1,6 @@
 # Thinking In React Function Example
 
-See: !(YouTube Video)[https://youtu.be/WT3cPlShsPM]
+See: [YouTube Video](https://youtu.be/WT3cPlShsPM)
 
 It's 99% the same.
 
